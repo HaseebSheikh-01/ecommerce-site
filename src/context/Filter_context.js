@@ -11,6 +11,12 @@ grid_view: true,
 sorting_value: "lowest",
 filters: {
     text: "",
+    category: "all",
+    company: "all",
+    color: "all",
+    maxPrice: 0,
+    price: 0,
+    minPrice: 0,
 }
 }
 
@@ -26,6 +32,12 @@ const setGridView = () => {
 
 const setListView = () => {
     return dispatch({type: "SET_LISTVIEW"})
+}
+
+
+// to clear the filters
+const clearFilters = () => {
+    dispatch({type: "CLEAR_FILTERS"})
 }
 
 // sorting function
@@ -55,7 +67,7 @@ useEffect(()=>{
 dispatch({type: "LOAD_FILTER_PRODUCTS",payload: products});
 },[products]);
 
-return <FilterContext.Provider value={{...state, setGridView, setListView, sorting, updateFilterValue}}>
+return <FilterContext.Provider value={{...state, setGridView, setListView, sorting, updateFilterValue, clearFilters,}}>
 {children}
 </FilterContext.Provider>
 

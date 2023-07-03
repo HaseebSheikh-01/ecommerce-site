@@ -12,7 +12,7 @@ const Services = () => {
         <div className="container" >
             <div className="grid grid-three-column"> 
             <div className="services-1">
-                <TbTruckDelivery className="icon" />
+                <TbTruckDelivery className="icon" style={{marginLeft:"15rem"}}/>
                 <h3>Super Fast and Free Delivery</h3>
             </div>
 
